@@ -1,8 +1,22 @@
-.main {
-  padding: 5rem 0;
-  flex: 1;
+.form {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  height: 8.75em;
+  border-radius: .5em;
+  grid-column: span 2;
   align-items: center;
+  justify-content: center;
+  background-color: lightgray;
+}
+
+.search {
+  font-size: 16px;
+  height: 3.4375em;
+  width: min(50em, 90%);
+}
+
+.btn {
+  width: 9.375em;
+  font-size: 16px;
+  height: 2.9375em;
+  margin-left: -9.6em;
 }
