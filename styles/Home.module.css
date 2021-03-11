@@ -3,6 +3,7 @@
   height: 8.75em;
   border-radius: .5em;
   grid-column: span 2;
+  grid-row: span 1;
   align-items: center;
   justify-content: center;
   background-color: lightgray;
@@ -19,4 +20,42 @@
   font-size: 16px;
   height: 2.9375em;
   margin-left: -9.6em;
+}
+
+.filters {
+  grid-column: span 1;
+  grid-row: 2/3;
+  display: flex;
+  flex-direction: column;
+}
+
+.filters > * {
+  margin-bottom: .9em;
+}
+
+.filter__checkbox {
+  margin-bottom: 1.875em;
+}
+
+.filter__checkbox > input {
+  margin-right: .75em;
+}
+
+.filter__search {
+  width: 100%;
+  height: 3em;
+  border: none;
+  padding: .875em;
+  border-radius: 4px;
+  margin-top: .875em;
+  margin-bottom: 1.625em;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.filter__radio {
+  margin-bottom: 1em;
+}
+
+.filter__radio > input {
+  margin-right: .75em;
 }

@@ -33,6 +33,8 @@ header {
   display: grid;
   grid-gap: 2em;
   grid-template-columns: .5fr 1fr;
+  grid-template-rows: 8.75em 1fr;
+  gap: 2.75em 2em;
   height: min(calc(100vh - 8.5em), 100%)
 }
 
