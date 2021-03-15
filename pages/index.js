@@ -1,6 +1,16 @@
 import { useState } from 'react'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import JobCard from '../components/JobCard'
+
+const job = {
+  id: "job01",
+  company: "Company 01",
+  title: "Front-End Sofware Engineer",
+  type: "Full time",
+  location: "New york",
+  date: "5 day ago"
+}
 
 export default function Home() {
   const [search, setSearch] = useState('')
@@ -88,6 +98,10 @@ export default function Home() {
             Berlin
           </label>
         </form>
+
+        <section className={styles.jobs}>
+          <JobCard job={job} />
+        </section>
       </main>
     </>
   )
