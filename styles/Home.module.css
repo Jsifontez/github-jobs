@@ -59,3 +59,8 @@
 .filter__radio > input {
   margin-right: .75em;
 }
+
+.jobs {
+  grid-row: 2/3;
+  grid-column: 2/3;
+}

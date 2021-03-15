@@ -7,7 +7,7 @@ const Layout = ({ children }) => {
 
       {children}
 
-      <footer>
+      {/* <footer>
         code with ❤️ by {' '}
         <a
           href="https://twitter.com/jsifontez_"
@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
         >
           @jsifontez
         </a>
-      </footer>
+      </footer> */}
     </section>
   )
 }
