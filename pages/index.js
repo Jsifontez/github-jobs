@@ -3,17 +3,9 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import JobCard from '../components/JobCard'
 
-const job = {
-  id: "job01",
-  company: "Company 01",
-  title: "Front-End Sofware Engineer",
-  type: "Full time",
-  location: "New york",
-  date: "5 day ago"
-}
-
-export default function Home() {
+export default function Home(props) {
   const [search, setSearch] = useState('')
+  const [jobs, setJobs] = useState(props.jobs)
 
   const handleChange = e => {
     setSearch(e.target.value)
@@ -100,9 +92,27 @@ export default function Home() {
         </form>
 
         <section className={styles.jobs}>
-          <JobCard job={job} />
+          {jobs.map( job =>
+            <JobCard
+              key={job.id}
+              company={job.company}
+              title={job.title}
+              type={job.type}
+              location={job.location}
+              date={job.date}
+            />
+          )}
         </section>
       </main>
     </>
   )
+}
+
+export async function getStaticProps () {
+  const res = await fetch("http://localhost:3000/api/hello")
+  const jobs = await res.json()
+
+  return {
+    props: { jobs }
+  }
 }

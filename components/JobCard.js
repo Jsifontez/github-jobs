@@ -5,13 +5,13 @@ const JobCard = (props) => {
     <article className={styles.job}>
       <img className={styles.job__img} src="" />
       <section className={styles.job__info}>
-        <p className={styles.job__company}>{ props.job.company }</p>
-        <h3 className={styles.job__title}>{ props.job.title }</h3>
+        <p className={styles.job__company}>{ props.company }</p>
+        <h3 className={styles.job__title}>{ props.title }</h3>
         <div className={styles.job__related}>
-          <span className={styles.job__type}>{ props.job.type }</span>
+          <span className={styles.job__type}>{ props.type }</span>
           <div>
-            <span className={styles.job__location}>{ props.job.location }</span>
-            <span className={styles.job__date}>{ props.job.date }</span>
+            <span className={styles.job__location}>{ props.location }</span>
+            <span className={styles.job__date}>{ props.date }</span>
           </div>
         </div>
       </section>
