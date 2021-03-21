@@ -99,7 +99,8 @@ export default function Home(props) {
               title={job.title}
               type={job.type}
               location={job.location}
-              date={job.date}
+              date={job.created_at}
+              logo={job.company_logo}
             />
           )}
         </section>
@@ -109,7 +110,7 @@ export default function Home(props) {
 }
 
 export async function getStaticProps () {
-  const res = await fetch("http://localhost:3000/api/hello")
+  const res = await fetch("https://jobs.github.com/positions.json?location=san+francisco")
   const jobs = await res.json()
 
   return {

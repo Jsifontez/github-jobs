@@ -4,13 +4,19 @@
   padding: .75em;
   height: 7.125em;
   border-radius: 4px;
+  margin-bottom: 2em;
   background-color: white;
 }
 
-.job__img {
-  width: 5.625em;
-  height: 5.625em;
+.img__container {
+  width: 20%;
+  margin: auto;
   border-radius: 4px;
+}
+
+.job__img {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .job__info {
