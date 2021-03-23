@@ -5,6 +5,7 @@ import JobCard from '../components/JobCard'
 
 export default function Home(props) {
   const [search, setSearch] = useState('')
+  const [isFulltime, setIsFulltime] = useState(false)
   const [jobs, setJobs] = useState(props.jobs)
   const [isLoading, setIsLoading] = useState(false)
 
@@ -12,8 +13,9 @@ export default function Home(props) {
     if (!isLoading) return
 
     const fetchJobs = async () => {
-      const URL = `${process.env.NEXT_PUBLIC_API}/positions.json?search=${search}`
 
+      const URL = `${process.env.NEXT_PUBLIC_API}/positions.json?search=${search}&full_time=${isFulltime}`
+      console.log(URL)
       const res = await fetch(URL)
       const data = await res.json()
 
@@ -31,6 +33,17 @@ export default function Home(props) {
 
   const handleSearch = (e) => {
     e.preventDefault()
+    setIsLoading(true)
+  }
+
+  const handleCheckbox = (e) => {
+    // when we are sending a request to the api, the checkbox doesn't have to change
+    if (isLoading) {
+      e.target.checked = !e.target.checked
+      return
+    }
+
+    setIsFulltime(e.target.checked)
     setIsLoading(true)
   }
 
@@ -54,7 +67,7 @@ export default function Home(props) {
 
         <form className={styles.filters}>
           <label htmlFor="full-time" className={styles.filter__checkbox}>
-            <input type="checkbox" id="full-time" />
+            <input type="checkbox" id="full-time" onChange={handleCheckbox} />
             Full time
           </label>
 
