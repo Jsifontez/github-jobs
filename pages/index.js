@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import JobCard from '../components/JobCard'
@@ -6,13 +6,32 @@ import JobCard from '../components/JobCard'
 export default function Home(props) {
   const [search, setSearch] = useState('')
   const [jobs, setJobs] = useState(props.jobs)
+  const [isLoading, setIsLoading] = useState(false)
+
+  useEffect( () => {
+    if (!isLoading) return
+
+    const fetchJobs = async () => {
+      const URL = `${process.env.NEXT_PUBLIC_API}/positions.json?search=${search}`
+
+      const res = await fetch(URL)
+      const data = await res.json()
+
+      setJobs(data)
+      setIsLoading(false)
+    }
+
+    fetchJobs()
+  }, [isLoading])
+
 
   const handleChange = e => {
-    setSearch(e.target.value)
+    setSearch(e.target.value.toLocaleLowerCase())
   }
 
   const handleSearch = (e) => {
     e.preventDefault()
+    setIsLoading(true)
   }
 
   return (
@@ -92,6 +111,7 @@ export default function Home(props) {
         </form>
 
         <section className={styles.jobs}>
+          {isLoading && <h4>Loading Jobs...</h4>}
           {jobs.map( job =>
             <JobCard
               key={job.id}
