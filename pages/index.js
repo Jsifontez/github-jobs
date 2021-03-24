@@ -5,16 +5,18 @@ import JobCard from '../components/JobCard'
 
 export default function Home(props) {
   const [search, setSearch] = useState('')
-  const [isFulltime, setIsFulltime] = useState(false)
   const [jobs, setJobs] = useState(props.jobs)
   const [isLoading, setIsLoading] = useState(false)
+  // filters
+  const [isFulltime, setIsFulltime] = useState(false)
+  const [city, setCity] = useState('')
 
   useEffect( () => {
     if (!isLoading) return
 
     const fetchJobs = async () => {
 
-      const URL = `${process.env.NEXT_PUBLIC_API}/positions.json?search=${search}&full_time=${isFulltime}`
+      const URL = `${process.env.NEXT_PUBLIC_API}/positions.json?search=${search}&full_time=${isFulltime}&location=${city}`
       console.log(URL)
       const res = await fetch(URL)
       const data = await res.json()
@@ -44,6 +46,11 @@ export default function Home(props) {
     }
 
     setIsFulltime(e.target.checked)
+    setIsLoading(true)
+  }
+
+  const handleRadioChange = e => {
+    setCity(e.target.value)
     setIsLoading(true)
   }
 
@@ -84,7 +91,7 @@ export default function Home(props) {
               id="london"
               name="location"
               value="london"
-              checked
+              onChange={handleRadioChange}
             />
             London
           </label>
@@ -95,8 +102,8 @@ export default function Home(props) {
               id="amsterdam"
               name="location"
               value="amsterdam"
-              checked
-            />
+              onChange={handleRadioChange}
+              />
             Amsterdam
           </label>
 
@@ -106,8 +113,8 @@ export default function Home(props) {
               id="new-york"
               name="location"
               value="new-york"
-              checked
-            />
+              onChange={handleRadioChange}
+              />
             New York
           </label>
 
@@ -117,7 +124,7 @@ export default function Home(props) {
               id="berlin"
               name="location"
               value="berlin"
-              checked
+              onChange={handleRadioChange}
             />
             Berlin
           </label>
