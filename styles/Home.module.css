@@ -64,3 +64,12 @@
   grid-row: 2/3;
   grid-column: 2/3;
 }
+
+.job__list {
+  list-style: none;
+}
+
+.job__link {
+  text-decoration: none;
+  color: inherit;
+}

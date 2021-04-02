@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import Head from 'next/head'
+import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 import JobCard from '../components/JobCard'
 
@@ -82,6 +83,7 @@ export default function Home(props) {
             <input id="filter-search" className={styles.filter__search}
               type="text"
               placeholder="City, state, zip code or country"
+              onChange={handleRadioChange}
             />
           </label>
 
@@ -132,16 +134,22 @@ export default function Home(props) {
 
         <section className={styles.jobs}>
           {isLoading && <h4>Loading Jobs...</h4>}
+
           {jobs.map( job =>
-            <JobCard
-              key={job.id}
-              company={job.company}
-              title={job.title}
-              type={job.type}
-              location={job.location}
-              date={job.created_at}
-              logo={job.company_logo}
-            />
+
+            <Link key={job.id} href={`/positions/${job.id}`} >
+              <a className={styles.job__link}>
+                <JobCard
+                  company={job.company}
+                  title={job.title}
+                  type={job.type}
+                  location={job.location}
+                  date={job.created_at}
+                  logo={job.company_logo}
+                />
+              </a>
+            </Link>
+
           )}
         </section>
       </main>
