@@ -1,34 +1,34 @@
 .job {
   width: 100%;
   display: flex;
-  padding: .75em;
-  height: 7.125em;
-  border-radius: 4px;
-  margin-bottom: 2em;
+  padding: .75rem;
+  height: 7.125rem;
+  border-radius: .25rem;
+  margin-bottom: 2rem;
   background-color: white;
 }
 
 .img__container {
   width: 20%;
   margin: auto;
-  border-radius: 4px;
 }
 
 .job__img {
   max-width: 100%;
   max-height: 100%;
+  border-radius: .25rem;
 }
 
 .job__info {
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-left: 1em;
+  margin-left: 1rem;
 }
 
 .job__company {
   margin: 0;
-  font-size: 12px;
+  font-size: .75rem;
   font-weight: bold;
 }
 
@@ -44,8 +44,9 @@
 
 .job__type {
   font-size: 12px;
-  width: fit-content;
-  border-radius: 4px;
+  margin-right: .5rem;
+  min-width: 4.2188rem;
+  border-radius: .25rem;
   display: inline-block;
   padding: .5em .6667em;
   border: 1px solid #334680;

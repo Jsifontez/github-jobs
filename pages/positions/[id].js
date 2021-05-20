@@ -21,7 +21,7 @@ export default function Position () {
       setJob(data)
       setIsLoading(false)
     }
-    
+
     fetchJob()
   }, [])
 
@@ -29,7 +29,7 @@ export default function Position () {
   return (
     <>
       <Head>
-        <title>GitHub Job Position</title>
+        <title>GitHub Jobs Position — {job.title} | {job.company}</title>
       </Head>
       <main className="main">
         <aside className={styles.job__info}>
@@ -39,7 +39,7 @@ export default function Position () {
           <h3 className={styles.job__link}>how to apply</h3>
           { ReactHtmlParser(job.how_to_apply) }
         </aside>
-        <article>
+        <article className={styles.job}>
           <header className={styles.job__header}>
             <h1 className={styles.job__title}>
               {job.title}
