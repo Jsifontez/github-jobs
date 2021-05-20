@@ -16,10 +16,15 @@
 }
 
 .btn {
+  border: none;
+  color: white;
   width: 9.375em;
   font-size: 16px;
   height: 2.9375em;
+  font-weight: 500;
   margin-left: -9.6em;
+  border-radius: .25rem;
+  background-color: hsla(212, 100%, 56%, 1);
 }
 
 .filters {
@@ -34,11 +39,20 @@
 }
 
 .filter__checkbox {
+  font-weight: 500;
   margin-bottom: 1.875em;
+  color: hsl(225, 43%, 35%);
 }
 
 .filter__checkbox > input {
   margin-right: .75em;
+}
+
+.filter__location {
+  color: #B9BDCF;
+  font-weight: bold;
+  font-size: .875rem;
+  text-transform: uppercase;
 }
 
 .filter__search {
@@ -53,7 +67,9 @@
 }
 
 .filter__radio {
+  font-weight: 500;
   margin-bottom: 1em;
+  color: hsla(225, 43%, 35%);
 }
 
 .filter__radio > input {

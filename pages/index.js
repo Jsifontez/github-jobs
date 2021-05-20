@@ -79,7 +79,7 @@ export default function Home(props) {
             Full time
           </label>
 
-          <label htmlFor="filter-search">LOCATION
+          <label htmlFor="filter-search" className={styles.filter__location}>location
             <input id="filter-search" className={styles.filter__search}
               type="text"
               placeholder="City, state, zip code or country"
@@ -87,7 +87,7 @@ export default function Home(props) {
             />
           </label>
 
-          <label htmlFor="london">
+          <label htmlFor="london" className={styles.filter__radio}>
             <input
               type="radio"
               id="london"
@@ -98,7 +98,7 @@ export default function Home(props) {
             London
           </label>
 
-          <label htmlFor="amsterdam">
+          <label htmlFor="amsterdam" className={styles.filter__radio}>
             <input
               type="radio"
               id="amsterdam"
@@ -109,7 +109,7 @@ export default function Home(props) {
             Amsterdam
           </label>
 
-          <label htmlFor="new-york">
+          <label htmlFor="new-york" className={styles.filter__radio}>
             <input
               type="radio"
               id="new-york"
@@ -120,7 +120,7 @@ export default function Home(props) {
             New York
           </label>
 
-          <label htmlFor="berlin">
+          <label htmlFor="berlin" className={styles.filter__radio}>
             <input
               type="radio"
               id="berlin"
