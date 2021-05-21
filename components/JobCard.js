@@ -1,6 +1,7 @@
 import styles from '../styles/JobCard.module.css'
 
 const JobCard = (props) => {
+  console.log(props)
   return (
     <article className={styles.job}>
       <div className={styles.img__container}>
@@ -13,7 +14,7 @@ const JobCard = (props) => {
           <span className={styles.job__type}>{ props.type }</span>
           <div>
             <span className={styles.job__location}>{ props.location }</span>
-            <span className={styles.job__date}>{ props.date }</span>
+            <span className={styles.job__date}>{ props.date } days ago</span>
           </div>
         </div>
       </section>
