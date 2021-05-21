@@ -135,20 +135,27 @@ export default function Home(props) {
         <section className={styles.jobs}>
           {isLoading && <h4>Loading Jobs...</h4>}
 
-          {jobs.map( job =>
+          {jobs.map( job => {
+            const createdD = new Date(job.created_at)
+            const today = new Date()
+            const tYMD = today.getFullYear() * 1e4 + today.getMonth() * 1e2 + today.getDate()
+            const cYMD = createdD.getFullYear() * 1e4 + createdD.getMonth() * 1e2 + createdD.getDate()
 
-            <Link key={job.id} href={`/positions/${job.id}`} >
+            const date = tYMD - cYMD > 0 ? tYMD - cYMD : createdD.toLocaleTimeString('en-US', {hour: '2-digit', minute:'2-digit'})
+
+            return (<Link key={job.id} href={`/positions/${job.id}`} >
               <a className={styles.job__link}>
                 <JobCard
                   company={job.company}
                   title={job.title}
                   type={job.type}
                   location={job.location}
-                  date={job.created_at}
+                  date={date}
                   logo={job.company_logo}
                 />
               </a>
-            </Link>
+            </Link>)
+          }
 
           )}
         </section>
