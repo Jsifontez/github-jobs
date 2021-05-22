@@ -1,7 +1,6 @@
 import styles from '../styles/JobCard.module.css'
 
 const JobCard = (props) => {
-  console.log(props)
   return (
     <article className={styles.job}>
       <div className={styles.img__container}>
