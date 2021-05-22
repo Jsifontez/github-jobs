@@ -14,7 +14,7 @@
   color: #334680;
   font-weight: 500;
   grid-row: span 2;
-  width: 23.3125rem;
+  /* width: 23.3125rem; */
 }
 
 .job__info > p {

@@ -32,7 +32,7 @@ header {
 
 .main {
   display: grid;
-  grid-template-columns: .5fr 1fr;
+  grid-template-columns: min(20vw,23.3125rem) 1fr;
   grid-template-rows: 8.75em 1fr;
   gap: 2.75rem 2rem;
   height: min(calc(100vh - 8.5em), 100%)
@@ -51,4 +51,20 @@ footer > a {
 
 footer > a:hover {
   color: lightpink;
+}
+
+@media screen and (max-width: 850px) {
+  .global__container {
+    padding: 2rem 3.125rem 1.25rem;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .global__container {
+    padding: 1rem .75rem 1.5rem;
+  }
+  .main {
+    grid-template-columns: 1fr;
+    gap: 1.5625rem 0;
+  }
 }

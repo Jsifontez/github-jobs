@@ -91,3 +91,10 @@
   text-decoration: none;
   color: inherit;
 }
+
+@media screen and (max-width: 740px) {
+  .jobs {
+    grid-column: 1/2;
+    grid-row: 3/4
+  }
+}
