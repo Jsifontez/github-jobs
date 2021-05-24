@@ -46,6 +46,7 @@
 
 .job__type {
   height: 1.625rem;
+  color: #334680;
   font-weight: bold;
   font-size: .75rem;
   border-radius: .25rem;
