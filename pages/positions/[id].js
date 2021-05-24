@@ -25,6 +25,17 @@ export default function Position () {
     fetchJob()
   }, [])
 
+  function date (created) {
+    const createdD = new Date(job.created_at)
+    const today = new Date()
+    const tYMD = today.getFullYear() * 1e4 + today.getMonth() * 1e2 + today.getDate()
+    const cYMD = createdD.getFullYear() * 1e4 + createdD.getMonth() * 1e2 + createdD.getDate()
+
+    const date = tYMD - cYMD > 0 ? `${tYMD - cYMD} days ago` : createdD.toLocaleTimeString('en-US', {hour: '2-digit', minute:'2-digit'}) + ' hours ago'
+
+    return date
+  }
+
   if (isLoading) return <div>Loading...</div>
   return (
     <>
@@ -45,7 +56,7 @@ export default function Position () {
               {job.title}
             </h1>
             <span className={styles.job__type}>{job.type}</span>
-            <small className={styles.company__location}> {job.created_at} </small>
+            <small className={styles.company__location}> {date(job.created_at)} </small>
           </header>
           <section className={styles.company}>
             <img className={styles.company__logo} src={job.company_logo} />
