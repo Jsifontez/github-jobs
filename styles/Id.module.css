@@ -17,6 +17,10 @@
   /* width: 23.3125rem; */
 }
 
+.job__info > * {
+  font-family: 'Poppins', sans-serif;
+}
+
 .job__info > p {
   word-break: break-all;
 }
@@ -41,6 +45,7 @@
 }
 
 .job__type {
+  height: 1.625rem;
   font-weight: bold;
   font-size: .75rem;
   border-radius: .25rem;

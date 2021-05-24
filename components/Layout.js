@@ -2,7 +2,7 @@ const Layout = ({ children }) => {
   return (
     <section className="global__container">
       <header>
-        <h1 className="title">Github Jobs</h1>
+        <h2 className="title">Github Jobs</h2>
       </header>
 
       {children}
